@@ -149,6 +149,7 @@ ehr_inp["Embodied_emissions_conversion_tech_fixed"] = {
 
 ehr_inp["Import_prices"] = {"NatGas": 0.120, "Oil": 0.101, "Biomass": 0.100}
 ehr_inp["Carbon_factors_import"] = {"NatGas": 0.228, "Oil": 0.301, "Biomass": 0.018}
+ehr_inp["carbon_pricing"] = {"NatGas": 0.12, "Oil": 0.12, "Biomass": 0} 
 
 ehr_inp["Conv_factor"] = {
     ("PV", "Elec"): 0.15,

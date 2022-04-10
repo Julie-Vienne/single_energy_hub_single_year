@@ -258,6 +258,13 @@ class EnergyHubRetrofit:
             doc="Prices for importing energy carriers from the grid",
         )
 
+        self.m.Carbon_pricing = pe.Param(
+            self.m.Energy_carriers_imp,
+            initialize=self.inp["carbon_pricing"],
+            default=0,
+            doc="Swiss carbon pricing of fossil fuels",
+        )
+
         self.m.Linear_conv_costs = pe.Param(
             self.m.Conversion_tech,
             initialize=self.inp["Linear_conv_costs"],
@@ -637,6 +644,13 @@ class EnergyHubRetrofit:
             within=pe.NonNegativeReals,
             initialize=0,
             doc="The profit for the export of electricity",
+        )
+
+        self.m.Total_carbon_pricing = pe.Var(
+            self.m.Energy_carriers_imp,
+            within=pe.NonNegativeReals,
+            initialize = 0,
+            doc="The carbon pricing for gas and oil",
         )
 
         # Bilinear term reformulations
@@ -1324,6 +1338,23 @@ class EnergyHubRetrofit:
             doc="Definition of the electricity export emissiosn",
         )
 
+        def Carbon_pricing_rule(m,ec_imp):
+            return m.Total_carbon_pricing[ec_imp] == sum(
+                m.Carbon_pricing[ec_imp]
+                * m.Carbon_factors_import[ec_imp]
+                * m.Number_of_days[ret, d]
+                * m.z1[ec_imp, ret, d, t]
+                for ret in m.Retrofit_scenarios
+                for d in m.Days
+                for t in m.Time_steps
+            )
+
+        self.m.Carbon_pricing_cstr = pe.Constraint(
+            self.m.Energy_carriers_imp,
+            rule=Carbon_pricing_rule,
+            doc="Sum of the carbon pricing for oil and gas",
+        )  
+
         # Objective function definitions
         # ------------------------------
         def Import_cost_rule(m):
@@ -1403,6 +1434,17 @@ class EnergyHubRetrofit:
                 + m.Import_cost
                 - m.Export_profit
                 + m.Number_CO2_certificates * m.Cost_CO2_certificates
+                + sum(
+                m.Carbon_pricing[ec_imp]                    
+                * m.Carbon_factors_import[ec_imp]
+                * m.Number_of_days[ret, d]
+                * m.z1[ec_imp, ret, d, t]
+                for ec_imp in m.Energy_carriers_imp
+                if ec_imp != "Elec"
+                for ret in m.Retrofit_scenarios
+                for d in m.Days
+                for t in m.Time_steps
+            )
             )
 
         self.m.Total_cost_def = pe.Constraint(

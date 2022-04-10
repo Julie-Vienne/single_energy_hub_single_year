@@ -25,14 +25,14 @@ Model characteristics:
 
 ## Elements of the model
 
-The main inputs required by this optimization models are the economic and environmental costs of the considered building elements:
+The main inputs required by the optimization model are the economic and environmental costs of the considered building elements:
 
-- The environmental and economic costs of the insulation materials used for the building retrofit. These costs can be generated using [2].
-- The energy demand of the buidling, which is dependent on the retrofit scenarios, i.e. the insulation materials chosen. The hourly demand profiles can be generated using Energy Plus and/or the following repo: [2].
-- The embodied emissions and the investment costs of the "energy hub" elements.
+- Environmental and economic costs of the insulation materials used for the building retrofit. These costs can be generated using [2].
+- Energy demand of the buidling, which is dependent on the retrofit scenarios, i.e. the insulation material chosen. The hourly demand profiles can be generated using Energy Plus and/or the following repo: [2].
+- Embodied emissions and the investment costs of the "energy hub" elements.
 - Hourly carbon intensity of the electricity grid [3].
 - Hourly import and export prices of the electricity grid.
-- The costs and offset potential of purchasable carbon certificates.
+- Costs and offset potential of purchasable carbon certificates.
 
 ## How to use the EnergyHub model 
 
@@ -60,12 +60,16 @@ The final step is to solve the model and get the model results:
 mod.solve()
 ```
 The key outputs of the model are the `.xlsx` files generated for each analysed scenario in the case of a single-obective optimization.
+```
 
 ## Multi-objective optimization
 
 A similar approach as described above can be used to run a multi-objective optimization. The files used for this are `EHret_example_multi.py` and `EnergyHubRetrofit_multi.py` and the paramter specifying the optimization objective is to be set equal to 3 (multi-objective optimization).
 In that case, the key outputs of the model are the `.xlsx` files generated for the number of pareto points chosen by the user. The optimization is run across all scenarios.
 
+## Plot generation
+
+`plot_generation.ipynb` can help generate pareto curves for the multi-objective optimization and bar plots for the single-objective optimization.
 
 # Source
 

@@ -60,7 +60,6 @@ The final step is to solve the model and get the model results:
 mod.solve()
 ```
 The key outputs of the model are the `.xlsx` files generated for each analysed scenario in the case of a single-obective optimization.
-```
 
 ## Multi-objective optimization
 

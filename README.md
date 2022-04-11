@@ -61,7 +61,7 @@ mod.solve()
 ```
 The key outputs of the model are the `.xlsx` files generated for each analysed scenario in the case of a single-obective optimization.
 
-## Multi-objective optimization
+### Multi-objective optimization
 
 A similar approach as described above can be used to run a multi-objective optimization. The files used for this are `EHret_example_multi.py` and `EnergyHubRetrofit_multi.py` and the paramter specifying the optimization objective is to be set equal to 3 (multi-objective optimization).
 In that case, the key outputs of the model are the `.xlsx` files generated for the number of pareto points chosen by the user. The optimization is run across all scenarios.

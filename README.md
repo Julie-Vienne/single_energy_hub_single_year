@@ -70,7 +70,7 @@ In that case, the key outputs of the model are the `.xlsx` files generated for t
 
 `plot_generation.ipynb` can help generate pareto curves for the multi-objective optimization and bar plots for the single-objective optimization.
 
-# Source
+## Source
 
 [1] Upstream repository: https://github.com/eth-sustec/single_energy_hub_single_year
 

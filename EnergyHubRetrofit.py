@@ -1344,6 +1344,8 @@ class EnergyHubRetrofit:
                 * m.Carbon_factors_import[ec_imp]
                 * m.Number_of_days[ret, d]
                 * m.z1[ec_imp, ret, d, t]
+                for ec_imp in m.Energy_carriers_imp
+                if ec_imp != "Elec"
                 for ret in m.Retrofit_scenarios
                 for d in m.Days
                 for t in m.Time_steps

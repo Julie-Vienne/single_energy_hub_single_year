@@ -36,6 +36,9 @@ The main inputs required by the optimization model are the economic and environm
 
 ## How to use the EnergyHub model 
 
+First, create the environment specified in `environment.yml` and activate it.
+Then, download the gurobi installation package and activate your license as described on the website https://www.gurobi.com/downloads/gurobi-optimizer-eula/.
+
 ### Single-objective optimization
 
 First, import the EnergyHub class (defined in the `EnergyHub.py` file):

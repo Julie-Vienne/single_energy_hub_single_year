@@ -1,0 +1,14 @@
+name: energyhub
+channels:
+  - conda-forge
+  - gurobi
+  - defaults
+dependencies:
+  - python>=3.8
+  - pandas
+  - openpyxl
+  - pyomo
+  - gurobi>=9.5 
+  - numpy
+  - jupyterlab
+  - matplotlib

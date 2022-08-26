@@ -77,6 +77,6 @@ In that case, the key outputs of the model are the `.xlsx` files generated for t
 
 <a id="1">[1]</a> Upstream repository: https://github.com/eth-sustec/single_energy_hub_single_year
 
-<a id="2">[2]</a> The model is built in Pyomo: http://pyomo.readthedocs.io
+<a id="2">[2]</a> Repository containing the code to generate EnergyPlus results: https://github.com/julie-vienne/grid-mEP 
 
 <a id="3">[3]</a> Electricity map: https://electricitymap.org/

@@ -2,7 +2,7 @@
 
 ## About
 
-This repo was forked from [1].
+This repo was forked from [[1]](#1).
 
 The initial repo contains a simple implementation of a standard "energy hub" model for the optimal design and operation of a single decentralized multi-energy system (D-MES) considering also building retrofit options. 
 
@@ -27,10 +27,10 @@ Model characteristics:
 
 The main inputs required by the optimization model are the economic and environmental costs of the considered building elements:
 
-- Environmental and economic costs of the insulation materials used for the building retrofit. These costs can be generated using [2].
-- Energy demand of the buidling, which is dependent on the retrofit scenarios, i.e. the insulation material chosen. The hourly demand profiles can be generated using Energy Plus and/or the following repo: [2].
+- Environmental and economic costs of the insulation materials used for the building retrofit. These costs can be generated using [[2]](#2).
+- Energy demand of the buidling, which is dependent on the retrofit scenarios, i.e. the insulation material chosen. The hourly demand profiles can be generated using Energy Plus and/or the following repo: [[2]](#2).
 - Embodied emissions and the investment costs of the "energy hub" elements.
-- Hourly carbon intensity of the electricity grid [3].
+- Hourly carbon intensity of the electricity grid [[3]](#3).
 - Hourly import and export prices of the electricity grid.
 - Costs and offset potential of purchasable carbon certificates.
 
@@ -75,8 +75,8 @@ In that case, the key outputs of the model are the `.xlsx` files generated for t
 
 ## Source
 
-[1] Upstream repository: https://github.com/eth-sustec/single_energy_hub_single_year
+<a id="1">[1]</a> Upstream repository: https://github.com/eth-sustec/single_energy_hub_single_year
 
-[2] The model is built in Pyomo: http://pyomo.readthedocs.io
+<a id="2">[2]</a> The model is built in Pyomo: http://pyomo.readthedocs.io
 
-[3] Electricity map: https://electricitymap.org/
+<a id="3">[3]</a> Electricity map: https://electricitymap.org/
